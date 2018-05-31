@@ -7,9 +7,9 @@
     "build": "npm run clear && npm run build:client && npm run build:server",
     "build:client": "webpack --config build/webpack.config.client.js",
     "build:server": "webpack --config build/webpack.config.server.js",
-    "clear": "rimraf dist",
-    "start": "node server/server.js",
-    "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js"
+    "dev:server": "cross-env NODE_ENV=development node server/server.js",
+    "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
+    "clear": "rimraf dist"
   },
   "author": "Nick",
   "license": "ISC",
@@ -22,13 +22,16 @@
     "babel-preset-stage-1": "^6.24.1",
     "cross-env": "^5.1.6",
     "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.18.0",
+    "memory-fs": "^0.4.1",
+    "react-hot-loader": "^4.2.0",
     "rimraf": "^2.6.2",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4",
-    "react-hot-loader": "^4.2.0"
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
